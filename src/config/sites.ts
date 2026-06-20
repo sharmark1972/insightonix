@@ -14,23 +14,23 @@ export interface SiteConfig {
 }
 
 const sites: Record<string, SiteConfig> = {
-  wjiis: {
-    slug: 'wjiis',
-    domain: 'wjiis.com',
-    name: 'World Journal of Innovative and Interdisciplinary Studies',
-    shortName: 'WJIIS',
-    description: 'A peer-reviewed international journal for innovative and interdisciplinary research.',
-    dbEnvVar: 'DATABASE_URL_WJIIS',
-    smtpUserEnvVar: 'SMTP_USER_WJIIS',
-    smtpPassEnvVar: 'SMTP_PASS_WJIIS',
-    smtpFromEnvVar: 'SMTP_FROM_WJIIS',
-    r2BucketEnvVar: 'R2_BUCKET_WJIIS',
-    r2PublicUrlEnvVar: 'R2_PUBLIC_URL_WJIIS',
-    nextauthSecretEnvVar: 'NEXTAUTH_SECRET_WJIIS',
+  insightonix: {
+    slug: 'insightonix',
+    domain: 'insightonix.com',
+    name: 'Global Insights Journal',
+    shortName: 'Insightonix',
+    description: 'International Peer-Reviewed Research',
+    dbEnvVar: 'DATABASE_URL_INSIGHTONIX',
+    smtpUserEnvVar: 'SMTP_USER_INSIGHTONIX',
+    smtpPassEnvVar: 'SMTP_PASS_INSIGHTONIX',
+    smtpFromEnvVar: 'SMTP_FROM_INSIGHTONIX',
+    r2BucketEnvVar: 'R2_BUCKET_INSIGHTONIX',
+    r2PublicUrlEnvVar: 'R2_PUBLIC_URL_INSIGHTONIX',
+    nextauthSecretEnvVar: 'NEXTAUTH_SECRET_INSIGHTONIX',
   },
 };
 
-const DEV_SITE_SLUG = 'wjiis';
+const DEV_SITE_SLUG = 'insightonix';
 
 export function getSiteConfig(slug: string): SiteConfig | null {
   return sites[slug] ?? null;
