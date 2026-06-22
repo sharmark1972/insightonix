@@ -285,6 +285,9 @@ export default function SubmitPaper() {
       const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/papers/submit`, {
         method: 'POST',
         body: formData,
+        headers: {
+          'x-site-slug': 'insightonix'
+        }
       });
 
       const result = await response.json();

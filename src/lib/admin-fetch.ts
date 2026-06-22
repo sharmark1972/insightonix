@@ -29,7 +29,7 @@ export async function adminFetch(
   }
 
   const extraHeaders: Record<string, string> = {};
-  if (activeSite) extraHeaders['x-active-site'] = activeSite;
+  if (activeSite) extraHeaders['x-site-slug'] = activeSite;
 
   return fetch(input, {
     ...init,
