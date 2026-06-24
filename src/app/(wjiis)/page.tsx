@@ -65,7 +65,11 @@ export default function HomePage() {
 
   const fetchHomeData = async () => {
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/home`);
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/home`, {
+        headers: {
+          'x-site-slug': 'insightonix'
+        }
+      });
       if (!response.ok) throw new Error('Failed to fetch home data');
       const data = await response.json();
       setStats(data.stats);
@@ -108,24 +112,24 @@ export default function HomePage() {
       <div className="min-h-screen font-sans">
         
         {/* Hero Section */}
-        <section className="relative border-b border-slate-200" style={{background: 'linear-gradient(135deg, #1a3a4a 0%, #1a6b7a 100%)'}}>
+        <section className="relative border-b border-slate-200" style={{background: '#1e3a5f'}}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
               <div className="lg:col-span-8 space-y-6">
-                <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold tracking-wide uppercase" style={{background: 'rgba(255,255,255,0.15)', color: '#87d4e0'}}>
+                <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold tracking-wide uppercase" style={{background: 'rgba(255,255,255,0.15)', color: 'white'}}>
                   ISSN: 3108-2211
                 </div>
 
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold leading-tight text-white">
                   Global Insights <br className="hidden md:block" />
-                  <span style={{color: '#87d4e0'}}>Journal</span>
+                  <span style={{color: 'white'}}>Journal</span>
                 </h1>
 
-                <p className="text-lg max-w-2xl leading-relaxed font-semibold tracking-wide" style={{color: '#87d4e0'}}>
+                <p className="text-lg max-w-2xl leading-relaxed font-semibold tracking-wide text-white">
                   INTERNATIONAL PEER-REVIEWED RESEARCH
                 </p>
 
-                <p className="text-lg max-w-2xl leading-relaxed" style={{color: '#b2e0e8'}}>
+                <p className="text-lg max-w-2xl leading-relaxed" style={{color: '#e0e0e0'}}>
                   A peer-reviewed academic journal publishing cutting-edge research across disciplines to advance global knowledge and innovation.
                 </p>
 
@@ -133,9 +137,9 @@ export default function HomePage() {
                   <Link
                     href="/submit"
                     className="inline-flex items-center justify-center px-6 py-3 text-white rounded-md transition-colors font-medium text-lg shadow-sm"
-                    style={{background: '#e8622a'}}
-                    onMouseEnter={e => (e.currentTarget.style.background='#c94f1f')}
-                    onMouseLeave={e => (e.currentTarget.style.background='#e8622a')}
+                    style={{background: 'white', color: '#1e3a5f'}}
+                    onMouseEnter={e => (e.currentTarget.style.opacity='0.9')}
+                    onMouseLeave={e => (e.currentTarget.style.opacity='1')}
                   >
                     Submit Manuscript
                     <ArrowRight className="w-5 h-5 ml-2" />
@@ -143,8 +147,8 @@ export default function HomePage() {
 
                   <Link
                     href="/library"
-                    className="inline-flex items-center justify-center px-6 py-3 rounded-md transition-colors font-medium text-lg"
-                    style={{background: 'rgba(255,255,255,0.1)', color: 'white', border: '1px solid rgba(255,255,255,0.3)'}}
+                    className="inline-flex items-center justify-center px-6 py-3 rounded-md transition-colors font-medium text-lg text-white"
+                    style={{background: 'transparent', border: '1px solid white'}}
                   >
                     Browse Library
                   </Link>
@@ -153,16 +157,16 @@ export default function HomePage() {
                 {/* Quick Stats */}
                 <div className="grid grid-cols-3 gap-8 pt-8 max-w-lg" style={{borderTop: '1px solid rgba(255,255,255,0.2)'}}>
                   <div>
-                    <div className="text-3xl font-bold text-white">{stats.totalPapers.toLocaleString()}+</div>
-                    <div className="text-sm font-medium" style={{color: '#87d4e0'}}>Published Papers</div>
+                    <div className="text-3xl font-bold" style={{color: '#1e3a5f'}}>{stats.totalPapers.toLocaleString()}+</div>
+                    <div className="text-sm font-medium text-white">Published Papers</div>
                   </div>
                   <div>
-                    <div className="text-3xl font-bold text-white">{stats.totalAuthors.toLocaleString()}+</div>
-                    <div className="text-sm font-medium" style={{color: '#87d4e0'}}>Authors</div>
+                    <div className="text-3xl font-bold" style={{color: '#1e3a5f'}}>{stats.totalAuthors.toLocaleString()}+</div>
+                    <div className="text-sm font-medium text-white">Authors</div>
                   </div>
                   <div>
-                    <div className="text-3xl font-bold text-white">12+</div>
-                    <div className="text-sm font-medium" style={{color: '#87d4e0'}}>Indexing</div>
+                    <div className="text-3xl font-bold" style={{color: '#1e3a5f'}}>12+</div>
+                    <div className="text-sm font-medium text-white">Indexing</div>
                   </div>
                 </div>
               </div>
