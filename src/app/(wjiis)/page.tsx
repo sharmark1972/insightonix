@@ -82,25 +82,25 @@ export default function HomePage() {
   return (
     <>
       <DynamicSEO
-        title="WJIIS - World Journal of Interdisciplinary Innovation Sciences"
-        description="Publishing rigorous, peer-reviewed research that bridges disciplinary boundaries and advances scientific knowledge for a global audience."
-        keywords={['interdisciplinary', 'innovation sciences', 'research journal', 'academic publishing', 'WJIIS', 'peer review']}
-        ogImage="https://wjiis.com/og-image.jpg"
-        canonicalUrl="https://wjiis.com"
+        title="Global Insights Journal - International Peer-Reviewed Research"
+        description="A peer-reviewed academic journal publishing cutting-edge research across disciplines to advance global knowledge and innovation."
+        keywords={['global insights', 'peer-reviewed research', 'research journal', 'academic publishing', 'international journal', 'peer review']}
+        ogImage="https://insightonix.com/og-image.jpg"
+        canonicalUrl="https://insightonix.com"
       />
       <WebsiteSchema
-        name="WJIIS"
-        url="https://wjiis.com"
-        description="Publishing rigorous, peer-reviewed research that bridges disciplinary boundaries and advances scientific knowledge for a global audience."
-        publisher="WJIIS"
+        name="Global Insights Journal"
+        url="https://insightonix.com"
+        description="A peer-reviewed academic journal publishing cutting-edge research across disciplines to advance global knowledge and innovation."
+        publisher="Global Insights Journal"
       />
       <OrganizationSchema
-        name="WJIIS"
-        url="https://wjiis.com"
-        logo="https://wjiis.com/wjiis-logo.svg"
-        description="WJIIS - World Journal of Interdisciplinary Innovation Sciences"
+        name="Global Insights Journal"
+        url="https://insightonix.com"
+        logo="https://insightonix.com/logo.svg"
+        description="Global Insights Journal - International Peer-Reviewed Research"
         contactPoint={{
-          email: "editor@wjiis.com",
+          email: "editor@insightonix.com",
           contactType: "Editorial Office"
         }}
       />
@@ -117,12 +117,16 @@ export default function HomePage() {
                 </div>
 
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold leading-tight text-white">
-                  World Journal of <br className="hidden md:block" />
-                  <span style={{color: '#87d4e0'}}>Interdisciplinary Innovation Sciences</span>
+                  Global Insights <br className="hidden md:block" />
+                  <span style={{color: '#87d4e0'}}>Journal</span>
                 </h1>
 
-                <p className="text-xl max-w-2xl leading-relaxed" style={{color: '#b2e0e8'}}>
-                  Publishing rigorous, peer-reviewed research that bridges disciplinary boundaries and advances scientific knowledge for a global audience.
+                <p className="text-lg max-w-2xl leading-relaxed font-semibold tracking-wide" style={{color: '#87d4e0'}}>
+                  INTERNATIONAL PEER-REVIEWED RESEARCH
+                </p>
+
+                <p className="text-lg max-w-2xl leading-relaxed" style={{color: '#b2e0e8'}}>
+                  A peer-reviewed academic journal publishing cutting-edge research across disciplines to advance global knowledge and innovation.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 pt-4">
