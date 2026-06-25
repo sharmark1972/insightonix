@@ -1,5 +1,6 @@
 'use client';
 
+import { siteFetch } from '@/lib/siteFetch';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import {
@@ -65,7 +66,7 @@ export default function HomePage() {
 
   const fetchHomeData = async () => {
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/home`, {
+      const response = await siteFetch(`${process.env.NEXT_PUBLIC_API_URL}/api/home`, {
         headers: {
           'x-site-slug': 'insightonix'
         }

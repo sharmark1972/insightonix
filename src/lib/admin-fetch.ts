@@ -1,5 +1,6 @@
 'use client';
 
+import { siteFetch } from '@/lib/siteFetch';
 import { getSession } from 'next-auth/react';
 import { getAdminSiteSlug } from '@/lib/admin-site';
 
@@ -31,7 +32,7 @@ export async function adminFetch(
   const extraHeaders: Record<string, string> = {};
   if (activeSite) extraHeaders['x-site-slug'] = activeSite;
 
-  return fetch(input, {
+  return siteFetch(input, {
     ...init,
     headers: {
       ...(init.headers ?? {}),
