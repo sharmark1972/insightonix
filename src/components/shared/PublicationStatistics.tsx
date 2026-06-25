@@ -21,7 +21,11 @@ export default function PublicationStatistics() {
 
   const fetchPublicationStats = async () => {
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/publication-stats`);
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/publication-stats`, {
+        headers: {
+          'x-site-slug': 'insightonix'
+        }
+      });
       if (response.ok) {
         const data = await response.json();
         setStats(data);

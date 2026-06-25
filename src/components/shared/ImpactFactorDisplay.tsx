@@ -16,7 +16,11 @@ export default function ImpactFactorDisplay() {
   useEffect(() => {
     const fetchImpactFactor = async () => {
       try {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/impact-factors`);
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/impact-factors`, {
+          headers: {
+            'x-site-slug': 'insightonix'
+          }
+        });
         if (response.ok) {
           const data = await response.json();
           if (data.currentImpactFactor) {

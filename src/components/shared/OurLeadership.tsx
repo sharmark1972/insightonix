@@ -92,9 +92,13 @@ export default function OurLeadership({ className = '' }: OurLeadershipProps) {
     try {
       setLoading(true);
       setError({ hasError: false, message: '' });
-      
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/team-members`);
-      
+
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/team-members`, {
+        headers: {
+          'x-site-slug': 'insightonix'
+        }
+      });
+
       if (!response.ok) {
         throw new Error(`Failed to fetch team members`);
       }

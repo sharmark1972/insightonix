@@ -113,8 +113,12 @@ export default function ChiefPatrons({ className = '' }: ChiefPatronsProps) {
       setLoading(true);
       setError({ hasError: false, message: '' });
       
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/admin/chief-patrons`);
-      
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/admin/chief-patrons`, {
+        headers: {
+          'x-site-slug': 'insightonix'
+        }
+      });
+
       if (!response.ok) {
         throw new Error(`Failed to fetch chief patrons: ${response.status} ${response.statusText}`);
       }

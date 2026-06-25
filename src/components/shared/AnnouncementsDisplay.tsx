@@ -50,7 +50,11 @@ export default function AnnouncementsDisplay({
           limit: limit.toString()
         });
         
-        const response = await fetch(`/api/announcements?${params}`);
+        const response = await fetch(`/api/announcements?${params}`, {
+          headers: {
+            'x-site-slug': 'insightonix'
+          }
+        });
         if (!response.ok) {
           throw new Error('Failed to fetch announcements');
         }

@@ -26,7 +26,11 @@ export default function VisitorCounter() {
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/visitors?timeframe=all`);
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/visitors?timeframe=all`, {
+          headers: {
+            'x-site-slug': 'insightonix'
+          }
+        });
         if (response.ok) {
           const data = await response.json();
           const totalVisitors = data.totalVisitors || 0;
